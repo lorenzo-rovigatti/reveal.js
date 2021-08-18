@@ -12,7 +12,6 @@
         - ws
     Server usage:
         terminalServer = new Terminal({
-            role: "server",
             port: 3000, // 3000 if empty
             shell: "bash"  // Command to run, "bash" by default
         })
@@ -72,6 +71,7 @@ class TerminalServer {
                         this.onresized(cols, rows);
                     }
                 } else {
+                    console.log(msg);
                     this.tty.write(msg);
                 }
             });
@@ -82,6 +82,7 @@ class TerminalServer {
                     // Websocket closed
                 }
             });
+            this.tty.write("clear\n");
         });
         this.wss.on('close', () => {
             this.ondisconnected();

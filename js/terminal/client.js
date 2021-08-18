@@ -11,7 +11,6 @@
             - browser with WebSocket support
     Client usage:
         terminalClient = new Terminal({
-            role: "client",
             parentId: "someid", // ID of the terminal container element
             port: 3000, // 3000 if empty
             host: "127.0.0.1" // Localhost by default
@@ -26,12 +25,13 @@
 
 class TerminalClient {
     constructor(opts) {
+        if(!opts.parentId) throw "Missing options";
+        
         let sockHost = opts.host || "127.0.0.1";
         let sockPort = opts.port || 3000;
 
         this.socket = new WebSocket("ws://" + sockHost + ":" + sockPort);
-        
-        if (!opts.parentId) throw "Missing options";
+        this.socket.onerror = (e) => {throw e};
         
         this.term = new Terminal({
             cols: 80,
@@ -51,15 +51,10 @@ class TerminalClient {
             while (rows.length < 3) {
                 rows = "0" + rows;
             }
-            this.socket.send("ESCAPED|-- RESIZE:"+cols+";"+rows);
+            this.socket.send("ESCAPED|-- RESIZE:" + cols + ";" + rows);
         };
 
         this.term.open(document.getElementById(opts.parentId), true);
-
-        /*this.socket.onopen = () => {
-            this.term.attach(this.socket);
-        };*/
-        this.socket.onerror = (e) => {throw e};
 
         this.fit = () => {
             this.fit_addon.fit();
