@@ -1,0 +1,23 @@
+.reveal .spacing-1-top {
+    margin-top: 1em;
+}
+
+.reveal .spacing-1-bottom {
+    margin-bottom: 1em;
+}
+
+.reveal .footer {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    font-size: 0.5em;
+    text-align: center;
+}
+
+.reveal .checkbox-list { 
+    list-style-type: none; 
+}
+
+.reveal .checkbox-list li::before { 
+    content: "\2610"; margin-right: 0.5em;     
+}
