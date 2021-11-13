@@ -21,3 +21,13 @@
 .reveal .checkbox-list li::before { 
     content: "\2610"; margin-right: 0.5em;     
 }
+
+.reveal .block-title {
+    border: 5px solid #586e75;
+    margin: auto;
+    padding: 5px 0 5px 0;
+    margin: 5px 0 5px 0;
+    background-color: #abb;
+    font-size: 120%;
+    color: #fdf6e3;
+}
