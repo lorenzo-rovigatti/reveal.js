@@ -14,19 +14,19 @@ $blockMargin: 20px;
 
 // Headings
 $headingMargin: 0 0 $blockMargin 0;
-$headingFont: 'League Gothic', Impact, sans-serif;
+$headingFont: Roboto, Impact, sans-serif;
 $headingColor: #eee;
 $headingLineHeight: 1.2;
-$headingLetterSpacing: normal;
+$headingLetterSpacing: -0.04em;;
 $headingTextTransform: uppercase;
 $headingTextShadow: none;
 $headingFontWeight: normal;
 $heading1TextShadow: $headingTextShadow;
 
-$heading1Size: 2.11em;
-$heading2Size: 1.55em;
-$heading3Size: 1.00em;
-$heading4Size: 0.88em;
+$heading1Size: 1.70em;
+$heading2Size: 1.24em;
+$heading3Size: 0.80em;
+$heading4Size: 0.70em;
 
 $codeFont: monospace;
 
