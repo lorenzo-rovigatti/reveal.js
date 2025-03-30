@@ -22,6 +22,23 @@
     content: "\2610"; margin-right: 0.5em;     
 }
 
+.title {
+  position: relative;
+  padding-left: 0.8em; /* space for symbol */
+  font-weight: 600;
+  display: block;
+}
+
+.title::before {
+  content: "⟩"; /* You can use "›", "→", "•", etc. */
+  margin-right: 0.4em;
+  color: #586e75;
+  font-size: 1.1em;
+  font-weight: 1000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .reveal .block-title {
     border: 5px solid #586e75;
     margin: auto;
